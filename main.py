@@ -474,15 +474,15 @@ else:
                 # selected by the user and all computations are based on travel time
                 route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
 
-                dict = {}
+            
                 node_points=list(route)
                 node_waiting_times= np.random.permutation( np.arrange(len(node_points)))
 
                 time_charge=dict(zip(node_points,node_waiting_times))
                 time_charge
-                for i, val in enumerate(route):
-                    dict = {}
-                    i, val, G.nodes[val]['x'], G.nodes[val]['y']
+                # for i, val in enumerate(route):
+                #     dict = {}
+                #     i, val, G.nodes[val]['x'], G.nodes[val]['y']
 
                 
 
