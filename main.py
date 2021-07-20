@@ -448,6 +448,7 @@ else:
             input4 = my_geo2['lng']
 
             try:
+                st.write("hi")
 
 
             # if some error occurs during the generation of maps, then this except block will execute 
