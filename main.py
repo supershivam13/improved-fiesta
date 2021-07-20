@@ -475,10 +475,13 @@ else:
                 route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
 
             
-                node_points=list(route)
-                node_waiting_times= np.random.permutation( np.arrange(len(node_points)))
+                node_points=route
 
+                st.write("hello-1")
+                node_waiting_times= np.random.permutation( np.arrange(len(node_points)))
+                st.write("hello-2")
                 time_charge=dict(zip(node_points,node_waiting_times))
+                st.write("hello-3")
                 time_charge
                 # for i, val in enumerate(route):
                 #     dict = {}
