@@ -475,7 +475,7 @@ else:
                 route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
 
                 for i, val in enumerate(route):
-                    print(i, val, G.nodes[val]['x'], G.nodes[val]['y'])
+                    i, val, G.nodes[val]['x'], G.nodes[val]['y']
 
 
             # if some error occurs during the generation of maps, then this except block will execute 
