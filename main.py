@@ -479,7 +479,7 @@ else:
                 node_points=route
 
                 st.write("hello-1")
-                node_waiting_times= np.random.permutation( np.arange(len(node_points)))
+                node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
                 st.write("hello-2")
                 time_charge=dict(zip(node_points,node_waiting_times))
                 st.write("hello-3")
