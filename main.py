@@ -12,6 +12,7 @@ import requests
 import json
 import geopandas as gpd
 import numpy as np
+import random
 import matplotlib.pyplot as plt
 
 # import os
@@ -478,7 +479,7 @@ else:
                 node_points=route
 
                 st.write("hello-1")
-                node_waiting_times= np.random.permutation( np.arrange(len(node_points)))
+                node_waiting_times= np.random.permutation( np.arange(len(node_points)))
                 st.write("hello-2")
                 time_charge=dict(zip(node_points,node_waiting_times))
                 st.write("hello-3")
