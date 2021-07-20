@@ -448,7 +448,34 @@ else:
             input4 = my_geo2['lng']
 
             try:
-                st.write("hi")
+                st.write("HYE")
+
+                # Configure OSMnx by setting the default global settings values
+                ox.config(use_cache=True, log_console=True)
+
+                # Creating a graph from OSMNX within some distance of source point
+                G = ox.graph_from_point((input1, input2),dist=range_value,network_type=network_value,simplify=False)
+                # ox.plot_graph(G,node_color='r')
+
+                # # adding edge speeds for all the nodes present in the graph G
+                G = ox.speed.add_edge_speeds(G)
+
+                # # adding edge travel times for all the nodes present in the graph G
+                G = ox.speed.add_edge_travel_times(G)
+
+                # getting the nearest node from the source coordinates in the graph G generated above
+                orig = ox.get_nearest_node(G, (input1, input2))
+
+                # getting the nearest node from the destination coordinates in the graph G generated above
+                dest = ox.get_nearest_node(G, (input3, input4))
+
+                # shortest_path() function generates the shortest path between the orgin and source
+                # and store the path in a 'route' named variable according to the algorithm
+                # selected by the user and all computations are based on travel time
+                route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
+
+                for i, val in enumerate(route):
+                print(i, val, G.nodes[val]['x'], G.nodes[val]['y'])
 
 
             # if some error occurs during the generation of maps, then this except block will execute 
