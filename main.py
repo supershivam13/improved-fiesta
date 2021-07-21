@@ -521,7 +521,8 @@ else:
                         # shortest_route=z
                         # min=sum
                     
-                    sum=0
+                    type(sum)
+                    # sum=0
                     str.write("done")
 
                 str.write("done-2")
