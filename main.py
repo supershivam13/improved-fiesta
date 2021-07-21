@@ -518,8 +518,8 @@ else:
                     sum
                     if(sum<min):
                         st.write("done---")
-                        shortest_route=z
-                        min=sum
+                        # shortest_route=z
+                        # min=sum
                     
                     # type(sum)
                     # sum=0
