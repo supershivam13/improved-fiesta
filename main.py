@@ -473,18 +473,23 @@ else:
                 # shortest_path() function generates the shortest path between the orgin and source
                 # and store the path in a 'route' named variable according to the algorithm
                 # selected by the user and all computations are based on travel time
-                route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
+                routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
+
+                str.write(type(routes))
+                routes
+                #route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
+                node_points=[]
+                #for  r in routes:
+
+                # node_points=route
 
             
-                node_points=route
+                # node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
 
-                st.write("hello-1")
-                node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
-                st.write("hello-2")
-                time_charge=dict(zip(node_points,node_waiting_times))
-                st.write("hello-3")
-                time_charge
-                # for i, val in enumerate(route):
+                # time_charge=dict(zip(node_points,node_waiting_times))
+                
+                # time_charge
+                # # for i, val in enumerate(route):
                 #     dict = {}
                 #     i, val, G.nodes[val]['x'], G.nodes[val]['y']
 
