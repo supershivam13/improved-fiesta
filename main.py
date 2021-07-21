@@ -498,7 +498,7 @@ else:
                 node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
 
                 time_charge=dict(zip(node_points,node_waiting_times))
-                min=10000
+                min=100000
                 shortest_route=[]
 
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
@@ -517,8 +517,9 @@ else:
                     st.write("HYE8")
                     sum
                     if(sum<min):
-                        shortest_route=z
-                        min=sum
+                        st.write("done---")
+                        # shortest_route=z
+                        # min=sum
                     
                     sum=0
                     str.write("done")
