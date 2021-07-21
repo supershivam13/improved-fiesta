@@ -479,11 +479,14 @@ else:
                 type(routes)
                 
                 routes
+                
 
                 st.write("HYE3")
                 #route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
                 for r in routes: 
-                    type(r) 
+                    a  = r[0]
+                    type(a)
+                    a
                     st.write("hi")
 
                 node_points=[]
