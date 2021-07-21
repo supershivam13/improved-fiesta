@@ -500,20 +500,24 @@ else:
                 time_charge=dict(zip(node_points,node_waiting_times))
                 min=10000
                 shortest_route=[]
+
+                for h in routes:
+                    st.write("hi")
+
                 st.write("HYE5")
                 sum=0
 
-                for r in routes:
-                    for a in r:
+                for z in routes:
+                    for b in z:
                         st.write("HYE7")
-                        if(a not in time_charge.keys()):
+                        if(b not in time_charge.keys()):
                             st.write("not_found")
                         else:
-                            sum=sum+time_charge[a]
+                            sum=sum+time_charge[b]
                     
                     st.write("HYE8")
                     if(sum<min):
-                        shortest_route=r
+                        shortest_route=z
                         min=sum
                     
                     sum=0
