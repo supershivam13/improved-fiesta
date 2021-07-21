@@ -501,9 +501,9 @@ else:
                 min=10000
                 shortest_route=[]
                 st.write("HYE5")
+                sum=0
+
                 for r in routes:
-                    st.write("HYE6")
-                    sum=0
                     for a in r:
                         st.write("HYE7")
                         if(a not in time_charge.keys()):
@@ -515,8 +515,10 @@ else:
                     if(sum<min):
                         shortest_route=r
                         min=sum
-                    str.write("done")
                     
+                    sum=0
+                    str.write("done")
+
                 str.write("done-2")
 
                 shortest_route
