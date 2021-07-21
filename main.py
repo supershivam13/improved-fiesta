@@ -476,31 +476,30 @@ else:
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
 
                 st.write("HYE2")
-                type(routes)
                 
-                routes
+                
+                node_points=[]
                 
 
                 st.write("HYE3")
                 #route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
                 for r in routes: 
-                    a  = r[0]
-                    type(a)
-                    a
-                    st.write("hi")
-
-                node_points=[]
+                    for a in r:
+                        node_points.append(a)
+                    
+                
+                node_points=list(set(node_points))
                 #for  r in routes:
 
                 # node_points=route
 
             
-                # node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
+                node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
 
-                # time_charge=dict(zip(node_points,node_waiting_times))
+                time_charge=dict(zip(node_points,node_waiting_times))
                 
-                # time_charge
-                # # for i, val in enumerate(route):
+                time_charge
+                 # for i, val in enumerate(route):
                 #     dict = {}
                 #     i, val, G.nodes[val]['x'], G.nodes[val]['y']
 
