@@ -516,16 +516,16 @@ else:
                     
                     st.write("HYE8")
                     sum
-                    # if(sum<min):
-                    #     st.write("done---")
+                    if(sum<min):
+                        st.write("done---")
                         # shortest_route=z
                         # min=sum
                     
-                    # type(sum)
-                    # sum=0
-                    str.write("done")
+                    type(sum)
+                    sum=0
+                    st.write("done")
 
-                str.write("done-2")
+                st.write("done-2")
 
                 shortest_route
 
