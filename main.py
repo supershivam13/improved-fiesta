@@ -475,8 +475,11 @@ else:
                 # selected by the user and all computations are based on travel time
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
 
+                st.write("HYE2")
                 str.write(type(routes))
+                
                 routes
+                st.write("HYE3")
                 #route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
                 node_points=[]
                 #for  r in routes:
