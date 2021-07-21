@@ -503,8 +503,6 @@ else:
 
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
 
-                for h in routes:
-                    st.write("hi")
 
                 st.write("HYE5")
                 sum=0
