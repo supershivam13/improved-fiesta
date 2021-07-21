@@ -509,13 +509,13 @@ else:
 
                 for z in routes:
                     for b in z:
-                        st.write("HYE7")
                         if(b not in time_charge.keys()):
                             st.write("not_found")
                         else:
                             sum=sum+time_charge[b]
                     
                     st.write("HYE8")
+                    sum
                     if(sum<min):
                         shortest_route=z
                         min=sum
