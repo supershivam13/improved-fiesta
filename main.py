@@ -498,22 +498,27 @@ else:
                 node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
 
                 time_charge=dict(zip(node_points,node_waiting_times))
-                min=10000000
+                min=10000
                 shortest_route=[]
                 st.write("HYE5")
                 for r in routes:
+                    st.write("HYE6")
                     sum=0
                     for a in r:
+                        st.write("HYE7")
                         if(a not in time_charge.keys()):
                             st.write("not_found")
                         else:
                             sum=sum+time_charge[a]
                     
+                    st.write("HYE8")
                     if(sum<min):
                         shortest_route=r
                         min=sum
                     str.write("done")
+                    
                 str.write("done-2")
+
                 shortest_route
 
 
