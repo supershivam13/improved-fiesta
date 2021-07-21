@@ -497,9 +497,24 @@ else:
                 node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
 
                 time_charge=dict(zip(node_points,node_waiting_times))
-                
-                time_charge
-                 # for i, val in enumerate(route):
+                min=10000000
+                shortest_route=[]
+                for r in routes:
+                    sum=0
+                    for a in r:
+                        sum=sum+time_charge[a]
+                    
+                    if(sum<min):
+                        shortest_route=r
+                        min=sum
+                    str.write("done")
+                str.write("done-2")
+                shortest_route
+
+
+
+
+                                        # for i, val in enumerate(route):
                 #     dict = {}
                 #     i, val, G.nodes[val]['x'], G.nodes[val]['y']
 
