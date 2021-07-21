@@ -498,7 +498,7 @@ else:
                 node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
 
                 time_charge=dict(zip(node_points,node_waiting_times))
-                min=100000
+                min=1000000
                 shortest_route=[]
 
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
@@ -525,7 +525,10 @@ else:
 
                 st.write("done-2")
 
-                shortest_route
+                
+                route_map = ox.plot_route_folium(G, shortest_route,route_color='red',tiles=map_type,weight=5)
+
+                folium_static(route_map)
 
 
 
