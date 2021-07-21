@@ -501,6 +501,8 @@ else:
                 min=10000
                 shortest_route=[]
 
+                routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
+
                 for h in routes:
                     st.write("hi")
 
