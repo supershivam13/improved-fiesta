@@ -476,7 +476,7 @@ else:
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
 
                 st.write("HYE2")
-                str.write(type(routes))
+                type(routes)
                 
                 routes
                 st.write("HYE3")
