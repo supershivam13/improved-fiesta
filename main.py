@@ -487,19 +487,20 @@ else:
 
                 node_points2 = []
                 
-                st.write("hi")
-                node_points2=(np.random.permutation(node_points).tolist())[0:int(len(node_points)*0.3)]
-    
-                st.write("hi2")
+                # taking 50% of the node points to be charging stations only
+                node_points2=(np.random.permutation(node_points).tolist())[0:int(len(node_points)*0.5)]
+
                 # generating the random waiting time to the charging stations
                 node_waiting_times = np.random.permutation( np.arange(len(node_points))).tolist()
 
                 # making a dictionary to assign the node with random waiting time
                 time_charge=dict(zip(node_points,node_waiting_times))
 
-                for  c in node_points2:
+                # 0 waiting time means those node are not charging stations
+                for c in node_points2:
                     time_charge[c]=0
 
+                # printing the dictionary of node : waiting time
                 time_charge
 
                 # a variable having a very high value
