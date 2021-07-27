@@ -505,10 +505,7 @@ else:
 
                 for z in routes:
                     for b in z:
-                        if(b not in time_charge.keys()):
-                            st.write("not_found")
-                        else:
-                            sum=sum+time_charge[b]
+                        sum=sum+time_charge[b]
                     
                     sum
                     if(sum<min):
