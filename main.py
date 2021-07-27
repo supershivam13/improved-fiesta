@@ -516,13 +516,23 @@ else:
                         min=sum
                     
                     sum=0
-
-                st.write("done-2")
-
                 
-                route_map = ox.plot_route_folium(G, shortest_route,route_color='red',tiles=map_type,weight=5)
+                # Plotting the shortest route on the folium map named 'route_map' and coloring it red
+                route_map = ox.plot_route_folium(G, shortest_route,route_color='red',tiles=map_type,weight=3)
 
+                # Putting a blue folium Marker on the source coordinates with proper tooltip
+                tooltip1 = "Source"
+                folium.Marker(
+                [input1, input2], popup="Source", tooltip=tooltip1,icon=folium.Icon(color='blue')).add_to(route_map)
+
+                # Putting a red folium Marker on the destinaton coordinates with proper tooltip
+                tooltip2 = "Destination"
+                folium.Marker(
+                [input3, input4], popup="Destination", tooltip=tooltip2,icon=folium.Icon(color='red')).add_to(route_map)
+
+                # Displaying the final map with shortest_path plotted and markers placed on the correct locations
                 folium_static(route_map)
+
 
 
                 
