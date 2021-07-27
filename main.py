@@ -449,8 +449,6 @@ else:
             input4 = my_geo2['lng']
 
             try:
-                st.write("HYE")
-
                 # Configure OSMnx by setting the default global settings values
                 ox.config(use_cache=True, log_console=True)
 
@@ -474,38 +472,36 @@ else:
                 # and store the path in a 'route' named variable according to the algorithm
                 # selected by the user and all computations are based on travel time
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
-
-                st.write("HYE2")
                 
-                
+                # a list of potential charging points considered
                 node_points=[]
-                
 
-                st.write("HYE3")
-                #route = nx.shortest_path(G, orig, dest, 'travel_time',method=algo_value)
+                # Extracting all the node points
                 for r in routes: 
                     for a in r:
                         node_points.append(a)
                     
-                
+                # removing the duplicates nodes from all k shortest routes
                 node_points=list(set(node_points))
-                st.write("HYE4")
-                #for  r in routes:
 
-                # node_points=route
+                # generating the random waiting time to the charging stations
+                node_waiting_times = np.random.permutation( np.arange(len(node_points))).tolist()
 
-            
-                node_waiting_times= np.random.permutation( np.arange(len(node_points))).tolist()
-
+                # making a dictionary to assign the node with random waiting time
                 time_charge=dict(zip(node_points,node_waiting_times))
+
+                time_charge
+
+                # a variable having a very high value
                 min=1000000
+
+                sum=0
+
+                # a list to store the final shortest route based on waiting time
                 shortest_route=[]
 
+                # Now, generating k number of shortest_path
                 routes = ox.k_shortest_paths(G, orig, dest, k=k_paths, weight='length')
-
-
-                st.write("HYE5")
-                sum=0
 
                 for z in routes:
                     for b in z:
@@ -514,14 +510,12 @@ else:
                         else:
                             sum=sum+time_charge[b]
                     
-                    st.write("HYE8")
                     sum
                     if(sum<min):
                         shortest_route=z
                         min=sum
                     
                     sum=0
-                    st.write("done")
 
                 st.write("done-2")
 
@@ -530,12 +524,6 @@ else:
 
                 folium_static(route_map)
 
-
-
-
-                                        # for i, val in enumerate(route):
-                #     dict = {}
-                #     i, val, G.nodes[val]['x'], G.nodes[val]['y']
 
                 
 
