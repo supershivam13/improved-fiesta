@@ -486,16 +486,17 @@ else:
                 node_points=list(set(node_points))
 
                 node_points2 = []
-
+                
+                st.write("hi")
                 node_points2=(np.random.permutation(node_points).tolist())[0:len(node_points)*0.3]
     
-
+                st.write("hi2")
                 # generating the random waiting time to the charging stations
                 node_waiting_times = np.random.permutation( np.arange(len(node_points))).tolist()
 
                 # making a dictionary to assign the node with random waiting time
                 time_charge=dict(zip(node_points,node_waiting_times))
-                
+
                 for  c in node_points2:
                     time_charge[c]=0
 
