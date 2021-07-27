@@ -488,7 +488,7 @@ else:
                 node_points2 = []
                 
                 st.write("hi")
-                node_points2=(np.random.permutation(node_points).tolist())[0:len(node_points)*0.3]
+                node_points2=(np.random.permutation(node_points).tolist())[0:int(len(node_points)*0.3)]
     
                 st.write("hi2")
                 # generating the random waiting time to the charging stations
