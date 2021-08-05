@@ -165,10 +165,10 @@ if input_method=='Coordinates':
                 
             # Plotting the other shortest_routes other than the main shortest route
             ind = 0
-                for x in routes:
-                    if (x!=route):
-                        route_map = ox.plot_route_folium(G, x,route_color=colors[ind],route_map=route_map,tiles=map_type,weight=2)
-                        ind = ind + 1
+            for x in routes:
+                if (x!=route):
+                    route_map = ox.plot_route_folium(G, x,route_color=colors[ind],route_map=route_map,tiles=map_type,weight=2)
+                    ind = ind + 1
 
             # Putting a blue folium Marker on the source coordinates with proper tooltip
             tooltip1 = "Source"
